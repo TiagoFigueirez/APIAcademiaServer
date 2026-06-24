@@ -8,5 +8,6 @@
 
         public Unidade? Unidade { get; set; }
         public IEnumerable<Manutencao>? Manutencoes { get; set; }
+        public IEnumerable<Exercicio>? Exercicios { get; set; }
     }
 }
