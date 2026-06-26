@@ -2,7 +2,7 @@
 {
     public class Grupo : Model
     {
-        public string? Admin { get; set; }
+        public string? Nome { get; set; }
 
         public IEnumerable<Usuario> Usuarios { get; set; }
     }
