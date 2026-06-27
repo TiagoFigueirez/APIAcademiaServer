@@ -24,6 +24,10 @@ namespace APIAcademia.Validations
             RuleFor(x => x.GrupoAcessoId)
                 .NotNull().WithMessage("O usuário deve pertencer a um grupo");
 
+            RuleFor(x => x.DataNascimento)
+                .NotEmpty().WithMessage("Data de nascimento em branco")
+                .LessThanOrEqualTo(DateTime.Today)
+                .WithMessage("A data de nascimento deve ser menor que hoje.");
 
         }
     }
