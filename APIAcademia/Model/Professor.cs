@@ -6,6 +6,6 @@
         public string? Especialidade { get; set; }
         public int funcionarioId { get; set; }
 
-        public Funcionario? funcionario {  get; set; }
+        public Funcionario? Funcionario {  get; set; }
     }
 }
