@@ -12,6 +12,7 @@ namespace APIAcademia.Validations
                 .InclusiveBetween(1, 100).WithMessage("O numero de Series deve esta entre 1 a 100."); ;
 
             RuleFor(x => x.Repeticoes)
+                .GreaterThan(0).WithMessage("O valor não pode ser zero")
                 .InclusiveBetween(1, 100).WithMessage("O numero de Repetições deve esta entre 1 a 100.");
 
             RuleFor(x => x.ExercicioId)

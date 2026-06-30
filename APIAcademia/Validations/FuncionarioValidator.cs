@@ -28,8 +28,8 @@ namespace APIAcademia.Validations
                 .NotEmpty().WithMessage("O cpf esta em branco");
 
             RuleFor(x => x.RG)
-                .Length(8, 8).WithMessage("O cpf deve ter 11 caracteres")
-                .NotEmpty().WithMessage("O cpf esta em branco");
+                .Length(8, 8).WithMessage("O rg deve ter 8 caracteres")
+                .NotEmpty().WithMessage("O rg esta em branco");
 
             RuleFor(x => x.DataNascimento)
                 .NotEmpty().WithMessage("Data de nascimento em branco")

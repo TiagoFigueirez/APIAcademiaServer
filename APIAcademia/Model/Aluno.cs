@@ -12,6 +12,7 @@
         public int UnidadeId { get; set; }
 
         public Unidade? Unidade { get; set; }
-        
+        public IEnumerable<Treino>? Treinos { get; set; }
+
     }
 }

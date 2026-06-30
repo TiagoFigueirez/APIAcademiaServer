@@ -23,6 +23,9 @@ namespace APIAcademia.Validations
                .Length(1, 20).WithMessage("O numero deve conter entre 1 a 20 caracteres")
                .NotEmpty().WithMessage("Numero em branco");
 
+            RuleFor(x => x.FotoIlustracao)
+                .Length(2, 500);
+
             RuleFor(x => x.Cnpj)
                .Length(14, 14).WithMessage("O CNPJ Deve conter 14 caracteres")
                .NotEmpty().WithMessage("CNPJ em branco");
