@@ -1,5 +1,9 @@
 using APIAcademia.ConfigurationApi;
 using APIAcademia.Context;
+using APIAcademia.Repositories;
+using APIAcademia.Repositories.Interface;
+using APIAcademia.Service;
+using APIAcademia.Service.Interface;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +17,14 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 // Add services to the container.
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<IGrupoRepository, GrupoRepository>();
+
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IGrupoService, GrupoService>();
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
