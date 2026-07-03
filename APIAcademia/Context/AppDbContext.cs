@@ -23,6 +23,41 @@ namespace APIAcademia.Context
         public DbSet<Treino> Treinos { get; set; }
         public DbSet<Unidade> Unidades { get; set; }
 
+        public override int SaveChanges()
+        {
+            AtualizarBaseEntity();
+            return base.SaveChanges();
+        }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            AtualizarBaseEntity();
+            return await base.SaveChangesAsync(cancellationToken);
+        }
+
+        private void AtualizarBaseEntity()
+        {
+            var entidades = ChangeTracker.Entries<Model.Model>();
+
+            foreach (var entidade in entidades)
+            {
+                //verifica se a entidade esta sendo criada
+                if (entidade.State == EntityState.Added)
+                {
+                    entidade.Entity.Criacao = DateTime.UtcNow;
+                    entidade.Entity.IsAti = true;
+                }
+
+                //verifica se a entidade está sendo modificada
+                if (entidade.State == EntityState.Modified)
+                {
+                    entidade.Property("DataCriacao").IsModified = false;
+                    entidade.Property("IsAtivo").IsModified = false;
+
+                    entidade.Entity.Alteracao = DateTime.UtcNow;
+                }
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

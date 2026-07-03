@@ -35,14 +35,14 @@ namespace APIAcademia.Service
 
             return usuario;
         }
-        public async Task<Usuario> UsuarioUpdate(int id)
+        public async Task<Usuario> UsuarioUpdate(int id, Usuario usuario)
         {
             var usuarioUpdate = await _wof.UsuarioRepository.GetAsync(g => g.Id == id);
 
             if (usuarioUpdate == null)
                 throw new KeyNotFoundException("Grupo não encontrado para atualizar");
 
-            var usuarioUpdated = _wof.UsuarioRepository.Update(usuarioUpdate);
+            var usuarioUpdated = _wof.UsuarioRepository.Update(usuario);
             await _wof.Commit();
 
             return usuarioUpdated;

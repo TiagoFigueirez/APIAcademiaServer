@@ -2,6 +2,7 @@ using APIAcademia.ConfigurationApi;
 using APIAcademia.Context;
 using APIAcademia.Repositories;
 using APIAcademia.Repositories.Interface;
+using APIAcademia.Repositories.Wof;
 using APIAcademia.Service;
 using APIAcademia.Service.Interface;
 using FluentValidation;
@@ -18,9 +19,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 // Add services to the container.
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IGrupoRepository, GrupoRepository>();
 
+//services
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IGrupoService, GrupoService>();
 
@@ -39,6 +42,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwaggerUI(options =>
+            options.SwaggerEndpoint("/openapi/v1.json", "Api Academia"));
 }
 
 app.UseExceptionHandler();

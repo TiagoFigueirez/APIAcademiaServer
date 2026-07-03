@@ -7,7 +7,7 @@ namespace APIAcademia.Service.Interface
         Task<IEnumerable<Grupo>> GetAllGrupo();
         Task<Grupo> GetGrupo(int id);
         Task<Grupo> GrupoCreate(Grupo grupo);
-        Task<Grupo> GrupoUpdate(int id);
+        Task<Grupo> GrupoUpdate(int id, Grupo grupo);
         Task<Grupo> GrupoDelete(int id);
     }
 }

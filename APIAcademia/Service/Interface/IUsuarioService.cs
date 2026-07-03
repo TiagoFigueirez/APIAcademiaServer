@@ -7,7 +7,7 @@ namespace APIAcademia.Service.Interface
         Task<IEnumerable<Usuario>> GetAllUsuario();
         Task<Usuario> GetUsuario(int id);
         Task<Usuario> UsuarioCreate(Usuario usuario);
-        Task<Usuario> UsuarioUpdate(int id);
+        Task<Usuario> UsuarioUpdate(int id,Usuario usuario);
         Task<Usuario> UsuarioDelete(int id);
     }
 }
