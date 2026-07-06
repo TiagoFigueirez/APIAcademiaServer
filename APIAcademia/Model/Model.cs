@@ -7,7 +7,7 @@ namespace APIAcademia.Model
         public int Id { get; set; }
 
         [JsonIgnore]
-        public bool IsAti { get; set; }
+        public bool IsAtivo { get; set; }
         [JsonIgnore]
         public DateTime Criacao { get; set; }
         [JsonIgnore]

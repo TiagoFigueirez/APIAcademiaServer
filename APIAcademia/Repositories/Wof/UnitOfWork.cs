@@ -8,6 +8,7 @@ namespace APIAcademia.Repositories.Wof
         private readonly AppDbContext _appDbContext;
         public IGrupoRepository? _grupoRepository;
         public IUsuarioRepository? _usuarioRepository;
+        public IFuncionarioRepository? _funcionarioRepository;
 
         public UnitOfWork(AppDbContext appDbContext)
         {
@@ -27,6 +28,13 @@ namespace APIAcademia.Repositories.Wof
             get
             {
                 return _usuarioRepository = _usuarioRepository ?? new UsuarioRepository(_appDbContext);
+            }
+        }
+        public IFuncionarioRepository FuncionarioRepository
+        {
+            get
+            {
+                return _funcionarioRepository = _funcionarioRepository ?? new FuncionarioRepository(_appDbContext);
             }
         }
 

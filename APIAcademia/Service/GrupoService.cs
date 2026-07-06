@@ -57,7 +57,7 @@ namespace APIAcademia.Service
             if (grupoDelete == null)
                 throw new KeyNotFoundException("Grupo não encontrado para atualizar");
 
-            grupoDelete.IsAti = false;
+            grupoDelete.IsAtivo = false;
 
             var grupoDeleted = _wof.GrupoRepository.Update(grupoDelete);
             await _wof.Commit();

@@ -45,7 +45,7 @@ namespace APIAcademia.Context
                 if (entidade.State == EntityState.Added)
                 {
                     entidade.Entity.Criacao = DateTime.UtcNow;
-                    entidade.Entity.IsAti = true;
+                    entidade.Entity.IsAtivo = true;
                 }
 
                 //verifica se a entidade está sendo modificada

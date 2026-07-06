@@ -6,6 +6,7 @@ namespace APIAcademia.Repositories.Wof
     {
         IGrupoRepository  GrupoRepository { get; }
         IUsuarioRepository  UsuarioRepository { get; }
+        IFuncionarioRepository  FuncionarioRepository { get; }
         Task Commit();
         void Dispose();
     }

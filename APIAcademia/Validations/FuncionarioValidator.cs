@@ -16,13 +16,6 @@ namespace APIAcademia.Validations
                .EmailAddress().WithMessage("e-mail invalido")
                .NotEmpty().WithMessage("e-mail em branco");
 
-            RuleFor(x => x.Senha)
-                .NotEmpty().WithMessage("Senha e obrigatoria")
-                .MinimumLength(6).WithMessage("A senha deve ter no mínimo 6 caracteres")
-                .Matches(@"[A-Z]").WithMessage("A senha deve ter ao menos uma letra maiúscula")
-                .Matches(@"[0-9]").WithMessage("A senha deve ter ao menos um numero")
-                .Matches(@"[\W_]").WithMessage("A senha deve ter ao menos um caracter especial");
-
             RuleFor(x => x.CPF)
                 .Length(11, 11).WithMessage("O cpf deve ter 11 caracteres")
                 .NotEmpty().WithMessage("O cpf esta em branco");

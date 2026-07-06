@@ -55,7 +55,7 @@ namespace APIAcademia.Service
             if (usuarioDelete == null)
                 throw new KeyNotFoundException("Grupo não encontrado para atualizar");
 
-            usuarioDelete.IsAti = false;
+            usuarioDelete.IsAtivo = false;
 
             var usuarioDeleted = _wof.UsuarioRepository.Update(usuarioDelete);
             await _wof.Commit();

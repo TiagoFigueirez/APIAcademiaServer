@@ -4,6 +4,7 @@ using APIAcademia.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APIAcademia.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260705233553_tirarUnidadeObg")]
+    partial class tirarUnidadeObg
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -234,6 +237,9 @@ namespace APIAcademia.Migrations
 
                     b.Property<decimal?>("SalarioHora")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("UnidadeId")
                         .HasColumnType("int");
