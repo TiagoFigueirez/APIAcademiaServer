@@ -1,5 +1,5 @@
 ﻿using APIAcademia.Model;
-using APIAcademia.Repositories.Wof;
+using APIAcademia.Repositories.Interface;
 using APIAcademia.Service.Interface;
 
 namespace APIAcademia.Service

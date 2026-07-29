@@ -1,5 +1,5 @@
 ﻿using APIAcademia.Model;
-using APIAcademia.Repositories.Wof;
+using APIAcademia.Repositories.Interface;
 using APIAcademia.Service.Interface;
 using Microsoft.AspNetCore.Identity;
 
@@ -47,6 +47,11 @@ namespace APIAcademia.Service
                     Email = "admin@gmail.com",
                     CPF = "00000000000",
                     RG = "000000000",
+                    NomeMae ="SUPERADMIN",
+                    NomePai ="SUPERADMIN",
+                    Salario = 0,
+                    SalarioHora = 0,
+                    Cargo ="Admin",
                     DataNascimento = DateTime.Now,
                     DataAdmissao = DateTime.Now,
                 };

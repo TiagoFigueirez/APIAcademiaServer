@@ -1,6 +1,4 @@
-﻿using APIAcademia.Repositories.Interface;
-
-namespace APIAcademia.Repositories.Wof
+﻿namespace APIAcademia.Repositories.Interface
 {
     public interface IUnitOfWork
     {

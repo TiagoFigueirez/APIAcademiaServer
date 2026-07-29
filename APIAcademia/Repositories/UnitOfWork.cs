@@ -1,7 +1,7 @@
 ﻿using APIAcademia.Context;
 using APIAcademia.Repositories.Interface;
 
-namespace APIAcademia.Repositories.Wof
+namespace APIAcademia.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
