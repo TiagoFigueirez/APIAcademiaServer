@@ -2,7 +2,7 @@
 
 namespace APIAcademia.Repositories.Interface
 {
-    public interface TreinoRepository : IRepository<Treino>
+    public interface IManutencoesRepository : IRepository<Manutencao>
     {
     }
 }
