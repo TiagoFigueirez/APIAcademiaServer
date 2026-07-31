@@ -53,7 +53,7 @@ namespace APIAcademia.Service
             var funcinarioDelete = await _wof.FuncionarioRepository.GetAsync(f => f.Id == id);
 
             if (funcinarioDelete == null)
-                throw new KeyNotFoundException("Funcionario não encontrado para atualizar");
+                throw new KeyNotFoundException("Funcionario não encontrado para deletar");
 
             funcinarioDelete.IsAtivo = false;
 
