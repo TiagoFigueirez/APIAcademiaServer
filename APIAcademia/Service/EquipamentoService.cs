@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Equipamento>> GetAllEquipamento()
         {
-            return await _wof.EquipamentosRepository.GetAllAsync();
+            return await _wof.EquipamentosRepository.GetAllAvailableAsync();
         }
 
         public async Task<Equipamento> GetEquipamento(int id)

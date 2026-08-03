@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Exercicio>> GetAllExercicio()
         {
-            return await _wof.ExerciciosRepository.GetAllAsync();
+            return await _wof.ExerciciosRepository.GetAllAvailableAsync();
         }
 
         public async Task<Exercicio> GetExercicio(int id)

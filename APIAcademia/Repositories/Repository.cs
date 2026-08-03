@@ -2,10 +2,11 @@
 using APIAcademia.Repositories.Interface;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
+using APIAcademia.Model;
 
 namespace APIAcademia.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : Model.Model 
     {
         private readonly AppDbContext _context;
 
@@ -18,6 +19,14 @@ namespace APIAcademia.Repositories
         {
             return await _context.Set<T>()
                         .AsNoTracking()
+                        .ToListAsync();
+        }
+
+        public async Task<IEnumerable<T>> GetAllAvailableAsync()
+        {
+            return await _context.Set<T>()
+                        .AsNoTracking()
+                        .Where(x => x.IsAtivo == true)
                         .ToListAsync();
         }
 

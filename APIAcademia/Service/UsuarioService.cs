@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Usuario>> GetAllUsuario()
         {
-            return await _wof.UsuarioRepository.GetAllAsync();
+            return await _wof.UsuarioRepository.GetAllAvailableAsync();
         }
 
         public async Task<Usuario> GetUsuario(int id)

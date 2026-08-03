@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Grupo>> GetAllGrupo()
         {
-            return await _wof.GrupoRepository.GetAllAsync();
+            return await _wof.GrupoRepository.GetAllAvailableAsync();
         }
 
         public async Task<Grupo> GetGrupo(int id)

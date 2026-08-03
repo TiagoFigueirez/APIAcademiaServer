@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Funcionario>> GetAllFuncionarioo()
         {
-            return await _wof.FuncionarioRepository.GetAllAsync();
+            return await _wof.FuncionarioRepository.GetAllAvailableAsync();
         }
 
         public async Task<Funcionario> GetFuncionario(int id)

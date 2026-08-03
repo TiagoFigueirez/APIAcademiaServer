@@ -5,6 +5,7 @@ namespace APIAcademia.Repositories.Interface
     public interface IRepository<T>
     {
         Task<IEnumerable<T>> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAvailableAsync();
         Task<T?> GetAsync(Expression<Func<T, bool>> precidacte);
         T Create(T entity);
         T Update(T entity);

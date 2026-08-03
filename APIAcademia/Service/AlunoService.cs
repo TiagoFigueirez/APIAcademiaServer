@@ -15,7 +15,7 @@ namespace APIAcademia.Service
 
         public async Task<IEnumerable<Aluno>> GetAllAluno()
         {
-            return await _wof.AlunoRepository.GetAllAsync();
+            return await _wof.AlunoRepository.GetAllAvailableAsync();
         }
 
         public async Task<Aluno> GetAluno(int id)
